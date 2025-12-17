@@ -1,14 +1,107 @@
-﻿{
-  "character": {
-    "title": "人物提示詞生成器",
-    "style": ["寫實照片", "賽博龐克", "吉卜力動畫風", "皮克斯 3D", "日系油繪"],
-    "appearance": ["金髮、大波浪、白皙膚色", "黑短髮、精壯身材、小麥色肌膚", "長直髮、纖細、蒼白皮膚"],
-    "details": ["護目鏡", "機械手臂", "刺青", "復古眼鏡", "黑色耳環"]
-  },
-  "scene": {
-    "title": "場景提示詞生成器",
-    "style": ["科幻城市", "魔幻森林", "廢棄工廠", "中世紀街道", "極簡室内設計"],
-    "appearance": ["黃昏、柔和橘光", "暴雨、閃爍霓虹", "清晨、大霧瀰漫", "深夜、聚光燈下"],
-    "details": ["發光植物", "破舊告示牌", "流浪貓", "漂浮碎石", "積水倒影"]
-  }
+{
+  "genre": [
+    {"en": "Cyberpunk 2077 style", "zh": "賽博龐克 2077"},
+    {"en": "Studio Ghibli anime style", "zh": "吉卜力動漫風"},
+    {"en": "Makoto Shinkai style", "zh": "新海誠光影風"},
+    {"en": "Hyper-realistic photography", "zh": "超寫實攝影"},
+    {"en": "Unreal Engine 5 render", "zh": "UE5 3D渲染"},
+    {"en": "Oil painting by Van Gogh", "zh": "梵谷油畫"},
+    {"en": "Arcane League of Legends style", "zh": "奧術風格"},
+    {"en": "80s retro synthwave", "zh": "80年代合成波"},
+    {"en": "Ukiyo-e traditional art", "zh": "日本浮世繪"},
+    {"en": "Dark Fantasy concept art", "zh": "黑暗幻想風格"}
+  ],
+  "vibe": [
+    {"en": "Dystopian and gritty", "zh": "反烏托邦/粗糙感"},
+    {"en": "Ethereal and dreamy", "zh": "空靈夢幻"},
+    {"en": "Dark and ominous", "zh": "黑暗不祥"},
+    {"en": "Vibrant and energetic", "zh": "充滿活力"},
+    {"en": "Melancholic and nostalgic", "zh": "憂鬱懷舊"},
+    {"en": "Majestic and grand", "zh": "壯麗宏大"}
+  ],
+  "quality": [
+    {"en": "8k resolution, highly detailed", "zh": "8K 解析度/極致細節"},
+    {"en": "Masterpiece, award winning", "zh": "傑作/獲獎作品"},
+    {"en": "Photorealistic, raw photo", "zh": "照片級真實"},
+    {"en": "HDR, ray tracing, sharp focus", "zh": "HDR/光線追蹤/對焦清晰"}
+  ],
+  "location": [
+    {"en": "Neon cyberpunk street", "zh": "賽博龐克霓虹街道"},
+    {"en": "Magical ancient forest", "zh": "魔法古老森林"},
+    {"en": "Post-apocalyptic ruins", "zh": "末日廢墟"},
+    {"en": "Snowy mountain peak", "zh": "雪山山頂"},
+    {"en": "Underwater coral reef city", "zh": "水下珊瑚城市"},
+    {"en": "Floating steampunk islands", "zh": "蒸氣龐克浮島"}
+  ],
+  "lighting": [
+    {"en": "Cinematic lighting", "zh": "電影級打光"},
+    {"en": "Golden hour sunlight", "zh": "黃昏金光"},
+    {"en": "Volumetric Tyndall effect", "zh": "耶穌光"},
+    {"en": "Neon flickering lights", "zh": "霓虹閃爍"},
+    {"en": "Softbox studio lighting", "zh": "攝影棚柔光"},
+    {"en": "Bioluminescent glow", "zh": "生物螢光"}
+  ],
+  "angle": [
+    {"en": "Eye-level shot", "zh": "水平視角"},
+    {"en": "Low angle hero shot", "zh": "低角度仰拍"},
+    {"en": "High angle bird's eye view", "zh": "鳥瞰"},
+    {"en": "Wide angle shot", "zh": "廣角鏡頭"}
+  ],
+  "lens": [
+    {"en": "35mm cinematic lens", "zh": "35mm 電影鏡頭"},
+    {"en": "85mm f/1.8 portrait lens", "zh": "85mm 人像大光圈"},
+    {"en": "Macro close-up", "zh": "微距特寫"},
+    {"en": "Bokeh background", "zh": "背景虛化"}
+  ],
+  "ethnicity": [
+    {"en": "East Asian", "zh": "東亞裔"},
+    {"en": "Nordic Caucasian", "zh": "北歐白人"},
+    {"en": "Latina", "zh": "拉丁裔"},
+    {"en": "Elf", "zh": "精靈族"},
+    {"en": "Cyborg", "zh": "生化人"},
+    {"en": "Demon with horns", "zh": "長角惡魔"}
+  ],
+  "gender": [
+    {"en": "woman", "zh": "女性"},
+    {"en": "man", "zh": "男性"},
+    {"en": "girl", "zh": "女孩"},
+    {"en": "boy", "zh": "男孩"}
+  ],
+  "hair": [
+    {"en": "long silver hair", "zh": "銀色長髮"},
+    {"en": "short messy bob", "zh": "凌亂短髮"},
+    {"en": "neon pink ponytail", "zh": "霓虹粉馬尾"},
+    {"en": "braided golden hair", "zh": "金色辮子"},
+    {"en": "undercut hairstyle", "zh": "側削髮型"},
+    {"en": "flowing dark blue hair", "zh": "飄逸深藍髮"}
+  ],
+  "body": [
+    {"en": "slim and elegant", "zh": "苗條優雅"},
+    {"en": "muscular and athletic build", "zh": "肌肉運動型"},
+    {"en": "petite and cute", "zh": "嬌小可愛"},
+    {"en": "curvy hourglass figure", "zh": "豐滿曲線"},
+    {"en": "tall and slender", "zh": "高挑修長"}
+  ],
+  "outfit": [
+    {"en": "futuristic techwear suit", "zh": "未來機能服"},
+    {"en": "cyberpunk leather jacket", "zh": "賽博皮革外套"},
+    {"en": "traditional japanese kimono", "zh": "傳統和服"},
+    {"en": "elegant evening gown", "zh": "優雅晚禮服"},
+    {"en": "tactical military armor", "zh": "戰術軍用盔甲"},
+    {"en": "victorian gothic dress", "zh": "維多利亞哥德裙"}
+  ],
+  "pose": [
+    {"en": "standing confidently", "zh": "自信站立"},
+    {"en": "dynamic action pose", "zh": "動態動作"},
+    {"en": "sitting on a ledge", "zh": "坐在邊緣"},
+    {"en": "looking back over shoulder", "zh": "回眸"},
+    {"en": "floating in mid-air", "zh": "漂浮空中"}
+  ],
+  "expression": [
+    {"en": "expressionless", "zh": "冷酷無表情"},
+    {"en": "smiling warmly", "zh": "溫暖微笑"},
+    {"en": "mysterious smirking", "zh": "神秘壞笑"},
+    {"en": "serious and focused", "zh": "嚴肅專注"},
+    {"en": "crying with tears", "zh": "哭泣流淚"}
+  ]
 }
