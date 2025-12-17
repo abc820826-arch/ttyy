@@ -1,107 +1,127 @@
 {
   "genre": [
-    {"en": "Cyberpunk 2077 style", "zh": "賽博龐克 2077"},
-    {"en": "Studio Ghibli anime style", "zh": "吉卜力動漫風"},
-    {"en": "Makoto Shinkai style", "zh": "新海誠光影風"},
-    {"en": "Hyper-realistic photography", "zh": "超寫實攝影"},
-    {"en": "Unreal Engine 5 render", "zh": "UE5 3D渲染"},
-    {"en": "Oil painting by Van Gogh", "zh": "梵谷油畫"},
-    {"en": "Arcane League of Legends style", "zh": "奧術風格"},
-    {"en": "80s retro synthwave", "zh": "80年代合成波"},
-    {"en": "Ukiyo-e traditional art", "zh": "日本浮世繪"},
-    {"en": "Dark Fantasy concept art", "zh": "黑暗幻想風格"}
+    {"en": "Cyberpunk 2077 style", "zh": "賽博龐克 2077"}, {"en": "Studio Ghibli style", "zh": "吉卜力動漫風"},
+    {"en": "Makoto Shinkai style", "zh": "新海誠光影風"}, {"en": "Hyper-realistic photography", "zh": "超寫實攝影"},
+    {"en": "Unreal Engine 5 render", "zh": "UE5 3D渲染"}, {"en": "Oil painting by Van Gogh", "zh": "梵谷油畫風"},
+    {"en": "Arcane animation style", "zh": "奧術風格"}, {"en": "80s retro synthwave", "zh": "80年代合成波"},
+    {"en": "Ukiyo-e traditional art", "zh": "日本浮世繪"}, {"en": "Dark Fantasy art", "zh": "黑暗幻想風"},
+    {"en": "Vogue fashion editorial", "zh": "Vogue 時尚風格"}, {"en": "Watercolor illustration", "zh": "水彩插畫"},
+    {"en": "Disney 3D animation", "zh": "迪士尼 3D 動畫"}, {"en": "Noir film style", "zh": "黑色電影風"},
+    {"en": "Pop art style", "zh": "波普藝術"}, {"en": "Impressionism", "zh": "印象派"},
+    {"en": "Surrealism", "zh": "超現實主義"}, {"en": "Ink wash painting", "zh": "水墨畫風"},
+    {"en": "Pixel art", "zh": "像素藝術"}, {"en": "Gothic art", "zh": "哥德式藝術"},
+    {"en": "Concept art", "zh": "遊戲概念圖"}, {"en": "Low poly art", "zh": "低多邊形風格"},
+    {"en": "C4D rendering", "zh": "C4D 渲染風格"}, {"en": "Renaissance painting", "zh": "文藝復興油畫"}
   ],
-  "vibe": [
-    {"en": "Dystopian and gritty", "zh": "反烏托邦/粗糙感"},
-    {"en": "Ethereal and dreamy", "zh": "空靈夢幻"},
-    {"en": "Dark and ominous", "zh": "黑暗不祥"},
-    {"en": "Vibrant and energetic", "zh": "充滿活力"},
-    {"en": "Melancholic and nostalgic", "zh": "憂鬱懷舊"},
-    {"en": "Majestic and grand", "zh": "壯麗宏大"}
+  "hairStyle": [
+    {"en": "long flowing hair", "zh": "飄逸長髮"}, {"en": "short messy bob", "zh": "凌亂短髮"},
+    {"en": "ponytail", "zh": "馬尾"}, {"en": "braided hair", "zh": "辮子"},
+    {"en": "undercut hairstyle", "zh": "側削髮型"}, {"en": "pixie cut", "zh": "精靈短髮"},
+    {"en": "twin tails", "zh": "雙馬尾"}, {"en": "curly perm", "zh": "捲髮"},
+    {"en": "straight hair with bangs", "zh": "齊瀏海直髮"}, {"en": "buzz cut", "zh": "平頭"},
+    {"en": "mohawk", "zh": "莫霍克頭"}, {"en": "side-swept hair", "zh": "側分髮"},
+    {"en": "dreadlocks", "zh": "髒辮"}, {"en": "french braid", "zh": "法式編髮"},
+    {"en": "bun hairstyle", "zh": "包包頭"}, {"en": "hime cut", "zh": "公主切"},
+    {"en": "afro hair", "zh": "爆炸頭"}, {"en": "wolf cut", "zh": "狼尾剪"},
+    {"en": "shoulder-length hair", "zh": "齊肩髮"}, {"en": "shaved head", "zh": "光頭/剃頭"},
+    {"en": "slicked back hair", "zh": "大背頭"}, {"en": "wavy beach hair", "zh": "海浪捲"},
+    {"en": "braided pigtails", "zh": "辮子雙馬尾"}, {"en": "top knot", "zh": "武士頭/頂髻"}
   ],
-  "quality": [
-    {"en": "8k resolution, highly detailed", "zh": "8K 解析度/極致細節"},
-    {"en": "Masterpiece, award winning", "zh": "傑作/獲獎作品"},
-    {"en": "Photorealistic, raw photo", "zh": "照片級真實"},
-    {"en": "HDR, ray tracing, sharp focus", "zh": "HDR/光線追蹤/對焦清晰"}
-  ],
-  "location": [
-    {"en": "Neon cyberpunk street", "zh": "賽博龐克霓虹街道"},
-    {"en": "Magical ancient forest", "zh": "魔法古老森林"},
-    {"en": "Post-apocalyptic ruins", "zh": "末日廢墟"},
-    {"en": "Snowy mountain peak", "zh": "雪山山頂"},
-    {"en": "Underwater coral reef city", "zh": "水下珊瑚城市"},
-    {"en": "Floating steampunk islands", "zh": "蒸氣龐克浮島"}
-  ],
-  "lighting": [
-    {"en": "Cinematic lighting", "zh": "電影級打光"},
-    {"en": "Golden hour sunlight", "zh": "黃昏金光"},
-    {"en": "Volumetric Tyndall effect", "zh": "耶穌光"},
-    {"en": "Neon flickering lights", "zh": "霓虹閃爍"},
-    {"en": "Softbox studio lighting", "zh": "攝影棚柔光"},
-    {"en": "Bioluminescent glow", "zh": "生物螢光"}
-  ],
-  "angle": [
-    {"en": "Eye-level shot", "zh": "水平視角"},
-    {"en": "Low angle hero shot", "zh": "低角度仰拍"},
-    {"en": "High angle bird's eye view", "zh": "鳥瞰"},
-    {"en": "Wide angle shot", "zh": "廣角鏡頭"}
-  ],
-  "lens": [
-    {"en": "35mm cinematic lens", "zh": "35mm 電影鏡頭"},
-    {"en": "85mm f/1.8 portrait lens", "zh": "85mm 人像大光圈"},
-    {"en": "Macro close-up", "zh": "微距特寫"},
-    {"en": "Bokeh background", "zh": "背景虛化"}
+  "hairColor": [
+    {"en": "silver white", "zh": "銀白色"}, {"en": "neon blue", "zh": "霓虹藍"},
+    {"en": "fiery red", "zh": "火紅色"}, {"en": "golden blonde", "zh": "金髮"},
+    {"en": "dark blue", "zh": "深藍色"}, {"en": "emerald green", "zh": "祖母綠"},
+    {"en": "pastel pink", "zh": "粉嫩色"}, {"en": "jet black", "zh": "烏黑"},
+    {"en": "lavender purple", "zh": "薰衣草紫"}, {"en": "rainbow gradient", "zh": "彩虹漸層"},
+    {"en": "platinum blonde", "zh": "白金色"}, {"en": "cherry blossom pink", "zh": "櫻花粉"},
+    {"en": "ash gray", "zh": "灰褐色"}, {"en": "vivid orange", "zh": "鮮橙色"},
+    {"en": "chocolate brown", "zh": "巧克力棕"}, {"en": "mint green", "zh": "薄荷綠"},
+    {"en": "bioluminescent glowing hair", "zh": "發光髮"}, {"en": "metallic copper", "zh": "金屬銅色"},
+    {"en": "multi-colored streaks", "zh": "挑染"}, {"en": "deep burgundy", "zh": "深酒紅"}
   ],
   "ethnicity": [
-    {"en": "East Asian", "zh": "東亞裔"},
-    {"en": "Nordic Caucasian", "zh": "北歐白人"},
-    {"en": "Latina", "zh": "拉丁裔"},
-    {"en": "Elf", "zh": "精靈族"},
-    {"en": "Cyborg", "zh": "生化人"},
-    {"en": "Demon with horns", "zh": "長角惡魔"}
-  ],
-  "gender": [
-    {"en": "woman", "zh": "女性"},
-    {"en": "man", "zh": "男性"},
-    {"en": "girl", "zh": "女孩"},
-    {"en": "boy", "zh": "男孩"}
-  ],
-  "hair": [
-    {"en": "long silver hair", "zh": "銀色長髮"},
-    {"en": "short messy bob", "zh": "凌亂短髮"},
-    {"en": "neon pink ponytail", "zh": "霓虹粉馬尾"},
-    {"en": "braided golden hair", "zh": "金色辮子"},
-    {"en": "undercut hairstyle", "zh": "側削髮型"},
-    {"en": "flowing dark blue hair", "zh": "飄逸深藍髮"}
+    {"en": "East Asian", "zh": "東亞裔"}, {"en": "Nordic Caucasian", "zh": "北歐白人"},
+    {"en": "Latina", "zh": "拉丁裔"}, {"en": "Elf with pointed ears", "zh": "精靈族"},
+    {"en": "Cyborg", "zh": "半機器人"}, {"en": "Ancient Deity", "zh": "遠古神祇"},
+    {"en": "African", "zh": "非洲裔"}, {"en": "Middle Eastern", "zh": "中東裔"},
+    {"en": "Vampire", "zh": "吸血鬼"}, {"en": "Demon with horns", "zh": "長角惡魔"},
+    {"en": "Angelic being", "zh": "天使"}, {"en": "Alien humanoid", "zh": "類人外星人"}
   ],
   "body": [
-    {"en": "slim and elegant", "zh": "苗條優雅"},
-    {"en": "muscular and athletic build", "zh": "肌肉運動型"},
-    {"en": "petite and cute", "zh": "嬌小可愛"},
-    {"en": "curvy hourglass figure", "zh": "豐滿曲線"},
-    {"en": "tall and slender", "zh": "高挑修長"}
+    {"en": "slim and elegant", "zh": "苗條優雅"}, {"en": "muscular build", "zh": "肌肉型"},
+    {"en": "petite and cute", "zh": "嬌小"}, {"en": "curvy figure", "zh": "豐滿曲線"},
+    {"en": "tall and slender", "zh": "高挑修長"}, {"en": "athletic toned", "zh": "結實運動型"},
+    {"en": "strong warrior build", "zh": "強壯戰士"}, {"en": "chubby and soft", "zh": "肉感柔軟"}
   ],
   "outfit": [
-    {"en": "futuristic techwear suit", "zh": "未來機能服"},
-    {"en": "cyberpunk leather jacket", "zh": "賽博皮革外套"},
-    {"en": "traditional japanese kimono", "zh": "傳統和服"},
-    {"en": "elegant evening gown", "zh": "優雅晚禮服"},
-    {"en": "tactical military armor", "zh": "戰術軍用盔甲"},
-    {"en": "victorian gothic dress", "zh": "維多利亞哥德裙"}
+    {"en": "techwear suit", "zh": "未來機能服"}, {"en": "cyberpunk leather jacket", "zh": "賽博皮革外套"},
+    {"en": "traditional kimono", "zh": "傳統和服"}, {"en": "evening gown", "zh": "晚禮服"},
+    {"en": "military armor", "zh": "軍用盔甲"}, {"en": "gothic dress", "zh": "哥德裙"},
+    {"en": "high-school uniform", "zh": "高中制服"}, {"en": "urban streetwear", "zh": "街頭潮牌"},
+    {"en": "oversized hoodie", "zh": "寬鬆帽T"}, {"en": "steampunk corset", "zh": "蒸汽龐克馬甲"},
+    {"en": "swimsuit", "zh": "泳裝"}, {"en": "magical girl costume", "zh": "魔法少女服"},
+    {"en": "spacesuit", "zh": "太空衣"}, {"en": "business suit", "zh": "正式西裝"},
+    {"en": "maid outfit", "zh": "女僕裝"}, {"en": "cybernetic exoskeleton", "zh": "機械外骨骼"},
+    {"en": "cheongsam", "zh": "旗袍"}, {"en": "cloaked in shadows", "zh": "陰影斗篷"}
   ],
   "pose": [
-    {"en": "standing confidently", "zh": "自信站立"},
-    {"en": "dynamic action pose", "zh": "動態動作"},
-    {"en": "sitting on a ledge", "zh": "坐在邊緣"},
-    {"en": "looking back over shoulder", "zh": "回眸"},
-    {"en": "floating in mid-air", "zh": "漂浮空中"}
+    {"en": "standing confidently", "zh": "自信站立"}, {"en": "dynamic action pose", "zh": "動態動作"},
+    {"en": "sitting on a ledge", "zh": "坐在邊緣"}, {"en": "looking back", "zh": "回眸"},
+    {"en": "floating mid-air", "zh": "漂浮"}, {"en": "kneeling", "zh": "跪姿"},
+    {"en": "leaning against wall", "zh": "靠牆"}, {"en": "running", "zh": "奔跑"},
+    {"en": "holding a sword", "zh": "持劍"}, {"en": "casting magic", "zh": "施放魔法"},
+    {"en": "lying on grass", "zh": "躺在草地"}, {"en": "squatting", "zh": "蹲姿"},
+    {"en": "crossed arms", "zh": "抱胸"}, {"en": "jumping", "zh": "跳躍"},
+    {"en": "meditating", "zh": "冥想"}, {"en": "selfie pose", "zh": "自拍姿勢"}
   ],
   "expression": [
-    {"en": "expressionless", "zh": "冷酷無表情"},
-    {"en": "smiling warmly", "zh": "溫暖微笑"},
-    {"en": "mysterious smirking", "zh": "神秘壞笑"},
-    {"en": "serious and focused", "zh": "嚴肅專注"},
-    {"en": "crying with tears", "zh": "哭泣流淚"}
+    {"en": "expressionless", "zh": "無表情"}, {"en": "smiling warmly", "zh": "溫暖微笑"},
+    {"en": "mysterious smirk", "zh": "神秘壞笑"}, {"en": "serious focused", "zh": "嚴肅專注"},
+    {"en": "crying", "zh": "哭泣"}, {"en": "shocked", "zh": "震驚"},
+    {"en": "angry", "zh": "生氣"}, {"en": "shy blushing", "zh": "害羞臉紅"},
+    {"en": "arrogant", "zh": "傲慢"}, {"en": "sleepy", "zh": "睏倦"},
+    {"en": "wink", "zh": "眨眼"}, {"en": "evil smile", "zh": "邪惡微笑"},
+    {"en": "confused", "zh": "困惑"}, {"en": "longing look", "zh": "渴望的眼神"}
+  ],
+  "location": [
+    {"en": "neon cyberpunk street", "zh": "霓虹賽博街道"}, {"en": "magical forest", "zh": "魔法森林"},
+    {"en": "post-apocalyptic ruins", "zh": "末日廢墟"}, {"en": "snowy mountain", "zh": "雪山"},
+    {"en": "underwater city", "zh": "水下城市"}, {"en": "floating islands", "zh": "浮島"},
+    {"en": "desert oasis", "zh": "沙漠綠洲"}, {"en": "cherry blossom park", "zh": "櫻花公園"},
+    {"en": "futuristic laboratory", "zh": "未來實驗室"}, {"en": "ancient temple", "zh": "古廟"},
+    {"en": "outer space station", "zh": "太空站"}, {"en": "steamy onsen", "zh": "溫泉"},
+    {"en": "library with floating books", "zh": "魔法圖書館"}, {"en": "rooftop at night", "zh": "深夜屋頂"}
+  ],
+  "vibe": [
+    {"en": "Dystopian", "zh": "反烏托邦"}, {"en": "Ethereal", "zh": "空靈"},
+    {"en": "Dark and ominous", "zh": "黑暗不祥"}, {"en": "Vibrant", "zh": "充滿活力"},
+    {"en": "Melancholic", "zh": "憂鬱懷舊"}, {"en": "Majestic", "zh": "壯麗"},
+    {"en": "Serene", "zh": "寧靜"}, {"en": "Cybernetic", "zh": "機械感"},
+    {"en": "Dreamlike", "zh": "夢幻"}, {"en": "Apocalyptic", "zh": "末世感"}
+  ],
+  "lighting": [
+    {"en": "Cinematic lighting", "zh": "電影打光"}, {"en": "Golden hour", "zh": "黃昏金光"},
+    {"en": "Tyndall effect", "zh": "耶穌光/廷得耳效應"}, {"en": "Neon flickering", "zh": "霓虹閃爍"},
+    {"en": "Studio softbox", "zh": "攝影棚柔光"}, {"en": "Bioluminescent glow", "zh": "生物螢光"},
+    {"en": "Moonlight", "zh": "月光"}, {"en": "Backlighting", "zh": "背光/逆光"},
+    {"en": "Volumetric lighting", "zh": "體積光"}, {"en": "Hard shadows", "zh": "硬影/強對比"}
+  ],
+  "quality": [
+    {"en": "8k resolution", "zh": "8K 解析度"}, {"en": "highly detailed", "zh": "極致細節"},
+    {"en": "masterpiece", "zh": "傑作"}, {"en": "photorealistic", "zh": "寫實"},
+    {"en": "Unreal Engine render", "zh": "虛幻引擎渲染"}, {"en": "ray tracing", "zh": "光線追蹤"},
+    {"en": "HDR", "zh": "HDR 高動態範圍"}, {"en": "sharp focus", "zh": "銳利聚焦"}
+  ],
+  "angle": [
+    {"en": "Eye-level", "zh": "水平視角"}, {"en": "Low angle", "zh": "仰拍"},
+    {"en": "High angle", "zh": "俯拍"}, {"en": "Bird's-eye view", "zh": "鳥瞰"},
+    {"en": "Close-up", "zh": "特寫"}, {"en": "Extreme close-up", "zh": "極近特寫"},
+    {"en": "Wide angle shot", "zh": "廣角"}, {"en": "Full body shot", "zh": "全身照"},
+    {"en": "Side view", "zh": "側面"}, {"en": "Dutch angle", "zh": "傾斜視角"}
+  ],
+  "lens": [
+    {"en": "35mm lens", "zh": "35mm 鏡頭"}, {"en": "85mm lens", "zh": "85mm 人像鏡"},
+    {"en": "Macro lens", "zh": "微距鏡頭"}, {"en": "Fish-eye lens", "zh": "魚眼鏡頭"},
+    {"en": "Bokeh background", "zh": "背景虛化"}, {"en": "Tilt-shift", "zh": "移軸"}
   ]
 }

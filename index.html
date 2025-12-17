@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Generator V6 Pro</title>
+    <title>AI Prompt Generator V6 Pro - 繁體中文版</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
             <h1>🤖 AI 繪圖提示詞生成器 <span class="badge">V6.0 Pro</span></h1>
-            <p>頭髮與身材拆分 | 範例提示 | 全域隨機靈感</p>
+            <p>頭髮與身材拆分 | 雙語 JSON 輸出 | 歷史紀錄連動</p>
         </header>
         
         <div class="top-controls">
@@ -29,14 +29,14 @@
                     <div class="field-grid">
                         <div class="input-unit full-width">
                             <label>作品標題 (Title):</label>
-                            <input type="text" id="title" placeholder="例如：A futuristic city battle">
+                            <input type="text" id="title" placeholder="例如：一位站在霓虹街道的少女">
                             <span class="hint">範例：Cyberpunk girl, Ancient ruins</span>
                         </div>
                         <div class="input-unit">
                             <label>藝術風格 (Genre):</label>
                             <input type="text" id="genre" list="list-genre" placeholder="選擇或輸入...">
                             <datalist id="list-genre"></datalist>
-                            <span class="hint">範例：Ukiyo-e, Pixar style</span>
+                            <span class="hint">範例：Pixar style, Studio Ghibli</span>
                         </div>
                         <div class="input-unit">
                             <label>視覺氛圍 (Vibe):</label>
@@ -62,25 +62,25 @@
                             <label>地點 (Location):</label>
                             <input type="text" id="location" list="list-location" placeholder="選擇或輸入...">
                             <datalist id="list-location"></datalist>
-                            <span class="hint">範例：Cyberpunk street, Magic forest</span>
+                            <span class="hint">例如：霓虹街道、魔法森林</span>
                         </div>
                         <div class="input-unit">
                             <label>光線 (Lighting):</label>
                             <input type="text" id="lighting" list="list-lighting" placeholder="選擇或輸入...">
                             <datalist id="list-lighting"></datalist>
-                            <span class="hint">範例：Cinematic, Golden hour</span>
+                            <span class="hint">例如：電影光、黃昏金光</span>
                         </div>
                         <div class="input-unit">
                             <label>鏡頭角度 (Angle):</label>
                             <input type="text" id="angle" list="list-angle" placeholder="選擇或輸入...">
                             <datalist id="list-angle"></datalist>
-                            <span class="hint">範例：Low angle, Bird's eye view</span>
+                            <span class="hint">例如：仰拍、水平視角</span>
                         </div>
                         <div class="input-unit">
                             <label>鏡頭規格 (Lens):</label>
                             <input type="text" id="lens" list="list-lens" placeholder="選擇或輸入...">
                             <datalist id="list-lens"></datalist>
-                            <span class="hint">範例：35mm lens, Bokeh</span>
+                            <span class="hint">例如：35mm 鏡頭、背景虛化</span>
                         </div>
                     </div>
                 </fieldset>
@@ -96,9 +96,34 @@
                     </div>
                     <div id="out-en" class="code-box">等待生成...</div>
                 </div>
+
+                <div class="output-card">
+                    <div class="card-header">
+                        <span class="tag zh">中文結構參考</span>
+                        <button class="copy-btn" onclick="copyText('out-zh')">📋 複製</button>
+                    </div>
+                    <div id="out-zh" class="code-box secondary">等待生成...</div>
                 </div>
+
+                <div class="output-card">
+                    <div class="card-header">
+                        <span class="tag json">JSON Data</span>
+                        <button class="copy-btn" onclick="copyText('out-json')">📋 複製</button>
+                    </div>
+                    <div id="out-json" class="code-box json-box">{}</div>
+                </div>
+
+                <div class="history-section">
+                    <div class="card-header">
+                        <h3>📜 歷史紀錄</h3>
+                        <button class="clear-btn" onclick="clearHistory()">🗑️ 清空</button>
+                    </div>
+                    <div id="historyList"></div>
+                </div>
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
