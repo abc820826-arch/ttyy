@@ -14,7 +14,7 @@ const HINTS = {
 };
 
 // --- 2. 核心：載入外部 JSON 詞庫 ---
-async function loadLibrary() {
+async function loadData() {
     try {
         // 使用 fetch 取得外部 JSON 檔案
         const response = await fetch('library.json');
@@ -186,6 +186,6 @@ function copyText(id) {
 document.getElementById('promptForm').addEventListener('submit', generatePrompt);
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadLibrary(); // 啟動時先載入 JSON
+    loadData(); // 啟動時先載入 JSON
     renderHistory();
 });
