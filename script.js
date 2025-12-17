@@ -54,7 +54,9 @@ async function loadLibrary() {
 
 function setLanguage(lang) {
     UI_LANG = lang;
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.innerText.toLowerCase().includes(lang)));
+    document.querySelectorAll('.lang-btn').forEach(b => {
+        b.classList.toggle('active', (lang === 'zh' ? b.innerText === '繁中' : b.innerText === 'EN'));
+    });
     updateUI();
 }
 
@@ -72,7 +74,6 @@ function updateUI() {
     document.getElementById('ui-history-title').innerText = t.history;
     document.querySelector('.large-primary').innerText = t.btnGenerate;
 
-    // 更新全域 datalists
     ["genre", "vibe", "angle", "location", "lighting", "quality"].forEach(k => {
         document.getElementById(`ui-label-${k}`).innerText = t.labels[k] + ":";
         renderDatalist(`list-${k}`, k);
@@ -83,7 +84,8 @@ function updateUI() {
 function renderDatalist(id, key) {
     const dl = document.getElementById(id);
     if (!dl || !DICTIONARY[key]) return;
-    dl.innerHTML = DICTIONARY[key].map(i => `<option value="${i.en}">${i[UI_LANG]}</option>`).join('');
+    // 修正：根據 UI_LANG 決定選單顯示的值
+    dl.innerHTML = DICTIONARY[key].map(i => `<option value="${i[UI_LANG]}"></option>`).join('');
 }
 
 function renderForm() {
@@ -114,39 +116,60 @@ function renderForm() {
     }
 }
 
+// 核心修正：同時生成英中對照
 function generatePrompt() {
-    const title = document.getElementById('title').value;
-    const genre = document.getElementById('genre').value;
-    const vibe = document.getElementById('vibe').value;
+    const getVal = (id) => document.getElementById(id).value;
     
-    // 組合英文
-    let en = `${genre}, ${title}, ${vibe}`;
+    const title = getVal('title');
+    const genre = getVal('genre');
+    const vibe = getVal('vibe');
+    const location = getVal('location');
+    const angle = getVal('angle');
+    const lighting = getVal('lighting');
+    const quality = getVal('quality');
+    
     const num = document.getElementById('numSubjects').value;
-    let subjects = [];
+    let subjectsEn = [];
+    let subjectsZh = [];
+
+    const attrs = ["gender", "age", "species", "ethnicity", "body", "hairStyle", "hairColor", "outfit", "pose", "expression"];
 
     for(let i=0; i<num; i++){
-        let subParts = [];
-        ["gender", "age", "species", "ethnicity", "body", "hairStyle", "hairColor", "outfit", "pose", "expression"]
-        .forEach(a => {
+        let subEn = [];
+        let subZh = [];
+        attrs.forEach(a => {
             let val = document.getElementById(`subject-${i}-${a}`).value;
-            if(val) subParts.push(val);
+            if(val) {
+                // 從字典中尋找匹配的項目以進行英中轉換
+                const entry = DICTIONARY[a]?.find(item => item.en === val || item.zh === val);
+                subEn.push(entry ? entry.en : val);
+                subZh.push(entry ? entry.zh : val);
+            }
         });
-        subjects.push(subParts.join(', '));
+        if(subEn.length) subjectsEn.push(subEn.join(', '));
+        if(subZh.length) subjectsZh.push(subZh.join(', '));
     }
     
-    en += subjects.length ? `, ${subjects.join(' and ')}` : "";
-    en += `, ${document.getElementById('location').value}, ${document.getElementById('angle').value}, ${document.getElementById('lighting').value}, ${document.getElementById('quality').value}`;
+    const genreEntry = DICTIONARY.genre.find(i => i.en === genre || i.zh === genre);
+    const vibeEntry = DICTIONARY.vibe.find(i => i.en === vibe || i.zh === vibe);
+    
+    // 生成英文提示詞 (AI 繪圖用)
+    let en = `${genreEntry?.en || genre}, ${title}, ${vibeEntry?.en || vibe}`;
+    en += subjectsEn.length ? `, ${subjectsEn.join(' and ')}` : "";
+    en += `, ${location}, ${angle}, ${lighting}, ${quality}`;
+
+    // 修正：生成中文結構參考
+    let zh = `【風格】${genreEntry?.zh || genre}\n【主題】${title}\n【氛圍】${vibeEntry?.zh || vibe}`;
+    if(subjectsZh.length) zh += `\n【角色】${subjectsZh.join(' 與 ')}`;
+    zh += `\n【環境設定】${location} / ${angle} / ${lighting} / ${quality}`;
 
     document.getElementById('out-en').innerText = en;
-    document.getElementById('out-zh').innerText = "提示詞已生成，結構如上。";
+    document.getElementById('out-zh').innerText = zh;
     
     const jsonData = {
-        title, genre, vibe, 
-        subjects: subjects,
-        settings: { 
-            location: document.getElementById('location').value,
-            camera: document.getElementById('angle').value 
-        }
+        title, genre: genreEntry?.en || genre, vibe: vibeEntry?.en || vibe, 
+        subjects: subjectsEn,
+        settings: { location, camera: angle }
     };
     document.getElementById('out-json').innerText = JSON.stringify(jsonData, null, 2);
     saveHistory(en);
@@ -171,14 +194,15 @@ function renderHistory() {
 }
 
 function copyText(id) {
-    navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => alert("Copied!"));
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => alert("Copied!"));
 }
 
 document.getElementById('randomizeBtn').onclick = () => {
     const keys = ["genre", "vibe", "angle", "location", "lighting", "quality"];
     keys.forEach(k => {
         const items = DICTIONARY[k];
-        document.getElementById(k).value = items[Math.floor(Math.random()*items.length)].en;
+        document.getElementById(k).value = items[Math.floor(Math.random()*items.length)][UI_LANG];
     });
     generatePrompt();
 };
