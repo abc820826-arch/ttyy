@@ -1,79 +1,56 @@
 {
   "genre": [
     {"en": "General anime style", "zh": "一般動漫風格"}, {"en": "Manga illustration", "zh": "漫畫插畫風"},
-    {"en": "Modern realistic photography", "zh": "現代寫實攝影"}, {"en": "Vintage photo style", "zh": "復古照片風"},
-    {"en": "3D Animation style", "zh": "3D 動畫風"}, {"en": "Oil painting style", "zh": "油畫風格"},
-    {"en": "Cyberpunk 2077", "zh": "賽博龐克 2077"}, {"en": "Studio Ghibli", "zh": "吉卜力動漫風"},
-    {"en": "Makoto Shinkai", "zh": "新海誠光影風"}, {"en": "Hyper-realistic", "zh": "超寫實攝影"}
+    {"en": "Hyper-realistic photography", "zh": "超寫實攝影"}, {"en": "Vintage photo style", "zh": "復古照片風"},
+    {"en": "3D Animation style", "zh": "3D 動畫風"}, {"en": "Cyberpunk 2077", "zh": "賽博龐克 2077"},
+    {"en": "Studio Ghibli", "zh": "吉卜力動漫風"}, {"en": "Makoto Shinkai", "zh": "新海誠光影風"}
   ],
   "vibe": [
     {"en": "Joyful and Bright", "zh": "歡樂明亮"}, {"en": "Romantic and Dreamy", "zh": "浪漫夢幻"},
-    {"en": "Mysterious and Eerie", "zh": "神秘詭譎"}, {"en": "Passionate and Grand", "zh": "熱血磅礡"},
-    {"en": "Cinematic", "zh": "電影感"}, {"en": "Dystopian", "zh": "反烏托邦"},
+    {"en": "Mysterious and Eerie", "zh": "神秘詭譎"}, {"en": "Cinematic", "zh": "電影感"},
     {"en": "Dark and Ominous", "zh": "黑暗不祥/末世感"}
+  ],
+  "gender": [
+    {"en": "Female", "zh": "女性"}, {"en": "Male", "zh": "男性"}, {"en": "Non-binary", "zh": "非二元性別"}
   ],
   "age": [
     {"en": "Child", "zh": "兒童"}, {"en": "Teenager", "zh": "少年/青年"},
     {"en": "Middle-aged", "zh": "中年"}, {"en": "Elderly", "zh": "老年"}
   ],
-  "gender": [
-    {"en": "Female", "zh": "女性"}, {"en": "Male", "zh": "男性"},
-    {"en": "Non-binary", "zh": "非二元性別"}
+  "species": [
+    {"en": "Human", "zh": "人類"}, {"en": "Elf", "zh": "精靈"}, {"en": "Cyborg", "zh": "半機器人"}, {"en": "Demon", "zh": "惡魔"}
   ],
   "ethnicity": [
-    {"en": "East Asian", "zh": "東亞裔"}, {"en": "Caucasian", "zh": "白人"},
-    {"en": "African", "zh": "非洲裔"}, {"en": "Latino", "zh": "拉丁裔"},
-    {"en": "South Asian", "zh": "南亞裔"}
-  ],
-  "species": [
-    {"en": "Human", "zh": "人類"}, {"en": "Elf", "zh": "精靈 (奇幻)"},
-    {"en": "Cyborg", "zh": "半機器人"}, {"en": "Vampire", "zh": "吸血鬼"},
-    {"en": "Demon", "zh": "長角惡魔"}
+    {"en": "East Asian", "zh": "東亞裔"}, {"en": "Caucasian", "zh": "白人"}, {"en": "African", "zh": "非洲裔"}
   ],
   "hairStyle": [
-    {"en": "Long straight hair", "zh": "長直髮"}, {"en": "Medium curly hair", "zh": "中長捲髮"},
-    {"en": "Ponytail", "zh": "馬尾"}, {"en": "Short bob", "zh": "波波頭"},
-    {"en": "Hime cut", "zh": "公主切(齊瀏海)"}
+    {"en": "Long straight hair", "zh": "長直髮"}, {"en": "Ponytail", "zh": "馬尾"}, {"en": "Short bob", "zh": "波波頭"}
   ],
   "hairColor": [
-    {"en": "Jet black", "zh": "烏黑"}, {"en": "Chocolate brown", "zh": "深棕色"},
-    {"en": "Golden blonde", "zh": "金髮"}, {"en": "Natural red hair", "zh": "自然紅髮"},
-    {"en": "Silver white", "zh": "銀白色"}, {"en": "Neon pink", "zh": "霓虹粉 (奇幻)"}
+    {"en": "Jet black", "zh": "烏黑"}, {"en": "Golden blonde", "zh": "金髮"}, {"en": "Silver white", "zh": "銀白色"}
   ],
   "body": [
-    {"en": "Average build", "zh": "普通身材/中等"}, {"en": "Slim", "zh": "苗條"},
-    {"en": "Muscular", "zh": "肌肉型"}, {"en": "Petite", "zh": "嬌小"},
-    {"en": "Athletic", "zh": "運動型"}
+    {"en": "Average build", "zh": "中等身材"}, {"en": "Slim", "zh": "苗條"}, {"en": "Muscular", "zh": "肌肉型"}
   ],
   "outfit": [
-    {"en": "Casual wear", "zh": "休閒服裝 (T恤牛仔褲)"}, {"en": "Sportswear", "zh": "運動裝"},
-    {"en": "Simple dress", "zh": "簡約連衣裙"}, {"en": "Techwear", "zh": "機能服"},
-    {"en": "Doctor uniform", "zh": "醫師制服"}, {"en": "Knight armor", "zh": "騎士鎧甲"}
+    {"en": "Casual wear", "zh": "休閒服"}, {"en": "Techwear", "zh": "機能服"}, {"en": "Knight armor", "zh": "騎士鎧甲"}
   ],
   "pose": [
-    {"en": "Standing naturally", "zh": "普通站姿"}, {"en": "Sitting normally", "zh": "普通坐姿"},
-    {"en": "Confident pose", "zh": "自信站立"}, {"en": "Running", "zh": "跑步 (動作)"},
-    {"en": "Swinging sword", "zh": "揮劍 (動作)"}
+    {"en": "Standing naturally", "zh": "自然站立"}, {"en": "Sitting", "zh": "坐姿"}, {"en": "Running", "zh": "跑步"}
   ],
   "expression": [
-    {"en": "Warm smile", "zh": "溫暖微笑"}, {"en": "Laughing heartily", "zh": "開心大笑"},
-    {"en": "Sad and melancholy", "zh": "悲傷憂鬱"}, {"en": "Terrified", "zh": "驚恐"},
-    {"en": "Cool and aloof", "zh": "高冷/冷酷"}
+    {"en": "Warm smile", "zh": "暖心微笑"}, {"en": "Cool and aloof", "zh": "高冷冷酷"}, {"en": "Sad", "zh": "悲傷"}
   ],
   "location": [
-    {"en": "City street", "zh": "城市街道"}, {"en": "Forest", "zh": "森林"},
-    {"en": "Beach", "zh": "海灘"}, {"en": "Cyberpunk city", "zh": "賽博龐克城市"}
+    {"en": "City street", "zh": "城市街道"}, {"en": "Forest", "zh": "森林"}, {"en": "Cyberpunk city", "zh": "賽博龐克城"}
   ],
   "lighting": [
-    {"en": "Cinematic lighting", "zh": "電影打光"}, {"en": "Golden hour", "zh": "黃昏金光"},
-    {"en": "Studio softbox", "zh": "攝影棚柔光"}, {"en": "Neon flickering", "zh": "霓虹閃爍"}
+    {"en": "Cinematic lighting", "zh": "電影打光"}, {"en": "Golden hour", "zh": "黃昏金光"}, {"en": "Neon", "zh": "霓虹光"}
   ],
   "quality": [
-    {"en": "8k resolution", "zh": "8K 解析度"}, {"en": "Highly detailed", "zh": "極致細節"},
-    {"en": "Cinematic texture", "zh": "電影質感"}, {"en": "Masterpiece", "zh": "傑作"}
+    {"en": "8k resolution", "zh": "8K 解析度"}, {"en": "Masterpiece", "zh": "傑作"}, {"en": "Highly detailed", "zh": "極致細節"}
   ],
   "angle": [
-    {"en": "Eye-level", "zh": "平視 (標準)"}, {"en": "Close-up", "zh": "特寫 (臉部)"},
-    {"en": "Full body shot", "zh": "全身遠景"}, {"en": "Low angle", "zh": "仰拍"}
+    {"en": "Eye-level", "zh": "平視"}, {"en": "Close-up", "zh": "特寫"}, {"en": "Full body shot", "zh": "全身"}
   ]
 }

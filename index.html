@@ -3,80 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Prompt Generator V7 - 專業優化版</title>
+    <title>AI Prompt Generator V7</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🤖 AI 繪圖提示詞生成器 <span class="badge">V7.0</span></h1>
-            <p>核心權重優化 | 角色設定細分 | 新手友善介面</p>
+            <div class="header-main">
+                <h1>🤖 AI Prompt Generator <span class="badge">V7.0</span></h1>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLanguage('zh')">繁中</button>
+                    <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+                </div>
+            </div>
+            <p id="ui-subtitle">專業級 AI 繪圖提示詞生成工具</p>
         </header>
         
         <div class="top-controls">
             <div class="control-group">
-                <label>👥 角色數量:</label>
+                <label id="ui-label-num">👥 角色數量:</label>
                 <input type="number" id="numSubjects" value="1" min="0" max="5">
-                <button class="btn primary" onclick="renderForm()">更新配置</button>
+                <button class="btn primary" id="btn-update" onclick="renderForm()">更新配置</button>
             </div>
-            <button class="btn success" id="randomizeBtn">✨ 全域隨機靈感 (Randomize All)</button>
+            <button class="btn success" id="randomizeBtn">✨ 隨機靈感 (Randomize All)</button>
         </div>
 
         <div class="main-layout">
-            <form id="promptForm">
+            <form id="promptForm" onsubmit="event.preventDefault(); generatePrompt();">
                 <fieldset class="high-priority">
-                    <legend>🎨 核心視覺 (Core Style)</legend>
+                    <legend id="ui-leg-core">🎨 核心視覺 (Core Style)</legend>
                     <div class="field-grid">
                         <div class="input-unit full-width highlight">
-                            <label>1. 描述你的圖像主題 (Title):</label>
+                            <label id="ui-label-title">1. 描述你的圖像主題 (Title):</label>
                             <input type="text" id="title" placeholder="例：身穿盔甲的女戰士站在落日下的荒野">
-                            <span class="hint">決定畫面的主要內容，建議首先填寫。</span>
+                            <span class="hint" id="ui-hint-title">此欄位決定畫面的核心內容。</span>
                         </div>
                         <div class="input-unit highlight">
-                            <label>2. 藝術風格 (Genre):</label>
-                            <input type="text" id="genre" list="list-genre" placeholder="必須選擇一個整體風格...">
+                            <label id="ui-label-genre">2. 藝術風格 (Genre):</label>
+                            <input type="text" id="genre" list="list-genre" placeholder="選擇風格...">
                             <datalist id="list-genre"></datalist>
-                            <span class="hint">決定整體的藝術形式（如動漫、寫實）。</span>
                         </div>
-                        <div class="input-unit">
-                            <label>3. 視覺氛圍 (Vibe):</label>
+                        <div class="input-unit highlight">
+                            <label id="ui-label-vibe">3. 視覺氛圍 (Vibe):</label>
                             <input type="text" id="vibe" list="list-vibe" placeholder="選擇場景情緒...">
                             <datalist id="list-vibe"></datalist>
-                            <span class="hint">例如：浪漫夢幻、黑暗不祥。</span>
                         </div>
                     </div>
                 </fieldset>
 
                 <fieldset>
-                    <legend>📸 攝影與光影 (Camera & Lighting)</legend>
+                    <legend id="ui-leg-env">📸 環境與攝影 (Environment)</legend>
                     <div class="field-grid">
-                        <div class="input-unit highlight">
-                            <label>攝影角度 (Angle):</label>
-                            <input type="text" id="angle" list="list-angle" placeholder="決定構圖...">
+                        <div class="input-unit">
+                            <label id="ui-label-angle">視角 (Angle):</label>
+                            <input type="text" id="angle" list="list-angle">
                             <datalist id="list-angle"></datalist>
-                            <span class="hint">如：特寫、全身。影響角色在畫面中的佔比。</span>
                         </div>
                         <div class="input-unit">
-                            <label>主要光線 (Lighting):</label>
-                            <input type="text" id="lighting" list="list-lighting" placeholder="選擇明暗與色調...">
-                            <datalist id="list-lighting"></datalist>
-                            <span class="hint">如：夕陽柔光、電影打光。</span>
-                        </div>
-                        <div class="input-unit">
-                            <label>畫質細節 (Quality):</label>
-                            <input type="text" id="quality" list="list-quality" placeholder="提升圖像品質...">
-                            <datalist id="list-quality"></datalist>
-                            <span class="hint">預設 8k, Masterpiece 提升細緻度。</span>
-                        </div>
-                        <div class="input-unit">
-                            <label>場景地點 (Location):</label>
-                            <input type="text" id="location" list="list-location" placeholder="選擇背景...">
+                            <label id="ui-label-location">地點 (Location):</label>
+                            <input type="text" id="location" list="list-location">
                             <datalist id="list-location"></datalist>
+                        </div>
+                        <div class="input-unit">
+                            <label id="ui-label-lighting">光影 (Lighting):</label>
+                            <input type="text" id="lighting" list="list-lighting">
+                            <datalist id="list-lighting"></datalist>
+                        </div>
+                        <div class="input-unit">
+                            <label id="ui-label-quality">畫質 (Quality):</label>
+                            <input type="text" id="quality" list="list-quality">
+                            <datalist id="list-quality"></datalist>
                         </div>
                     </div>
                 </fieldset>
 
                 <div id="subjectsContainer"></div>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn large-primary">🚀 立即生成提示詞 (Generate)</button>
+                </div>
             </form>
 
             <div class="output-side">
@@ -85,7 +90,7 @@
                         <span class="tag en">English Prompt (AI用)</span>
                         <button class="copy-btn" onclick="copyText('out-en')">📋 複製</button>
                     </div>
-                    <div id="out-en" class="code-box">等待生成...</div>
+                    <div id="out-en" class="code-box">...</div>
                 </div>
 
                 <div class="output-card">
@@ -93,12 +98,20 @@
                         <span class="tag zh">中文結構參考</span>
                         <button class="copy-btn" onclick="copyText('out-zh')">📋 複製</button>
                     </div>
-                    <div id="out-zh" class="code-box secondary">等待生成...</div>
+                    <div id="out-zh" class="code-box secondary">...</div>
+                </div>
+
+                <div class="output-card">
+                    <div class="card-header">
+                        <span class="tag json">JSON Data</span>
+                        <button class="copy-btn" onclick="copyText('out-json')">📋 複製</button>
+                    </div>
+                    <div id="out-json" class="code-box json-box">{}</div>
                 </div>
 
                 <div class="history-section">
                     <div class="card-header">
-                        <h3>📜 歷史紀錄</h3>
+                        <h3 id="ui-history-title">📜 歷史紀錄</h3>
                         <button class="clear-btn" onclick="clearHistory()">🗑️ 清空</button>
                     </div>
                     <div id="historyList"></div>
@@ -106,7 +119,6 @@
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
