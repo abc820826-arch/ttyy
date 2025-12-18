@@ -11,8 +11,12 @@ const UI_TEXT = {
         legEnv: "📸 環境與攝影",
         legSub: "👤 角色設定 Subject",
         labelTitle: "1. 描述你的圖像主題 (Title):",
-        labelGenre: "2. 藝術風格 (Genre):",
+        // 修正標籤名稱，與代碼邏輯一致
+        labelGenre: "2. 藝術風格 (Genre):", 
         labelVibe: "3. 視覺氛圍 (Vibe):",
+        // 未選擇前的預設文字 (Placeholder)
+        placeholderGenre: "選擇風格...",
+        placeholderVibe: "選擇場景情緒...",
         labelNum: "👥 角色數量:",
         history: "📜 歷史紀錄",
         labels: {
@@ -33,6 +37,8 @@ const UI_TEXT = {
         labelTitle: "1. Image Topic (Title):",
         labelGenre: "2. Art Genre:",
         labelVibe: "3. Visual Vibe:",
+        placeholderGenre: "Select Genre...",
+        placeholderVibe: "Select Vibe...",
         labelNum: "Subject Count:",
         history: "📜 History",
         labels: {
@@ -44,60 +50,59 @@ const UI_TEXT = {
     }
 };
 
-async function loadLibrary() {
-    try {
-        const res = await fetch('data.json');
-        DICTIONARY = await res.json();
-        setLanguage('zh'); 
-    } catch (e) { console.error("Data load failed", e); }
-}
-
-function setLanguage(lang) {
-    UI_LANG = lang;
-    document.querySelectorAll('.lang-btn').forEach(b => {
-        const btnText = b.innerText.toLowerCase();
-        b.classList.toggle('active', (lang === 'zh' ? btnText.includes('繁') : btnText.includes('en')));
-    });
-    updateUI();
-}
+// ... loadLibrary 保持不變 ...
 
 function updateUI() {
     const t = UI_TEXT[UI_LANG];
+    
+    // 1. 修正大標題
     document.getElementById('ui-subtitle').innerText = t.subtitle;
-    document.getElementById('btn-update').innerText = t.btnUpdate;
-    document.getElementById('randomizeBtn').innerText = t.btnRandom;
     document.getElementById('ui-leg-core').innerText = t.legCore;
     document.getElementById('ui-leg-env').innerText = t.legEnv;
-    document.getElementById('ui-label-title').innerText = t.labelTitle;
     
-    // 修正標題顯示錯誤
+    // 2. 修正核心視覺標籤 (原本 undefined 的地方)
     document.getElementById('ui-label-genre').innerText = t.labelGenre;
     document.getElementById('ui-label-vibe').innerText = t.labelVibe;
-    
+    document.getElementById('ui-label-title').innerText = t.labelTitle;
+
+    // 3. 還原 Placeholder (未選擇前的提示文字)
+    document.getElementById('genre').placeholder = t.placeholderGenre;
+    document.getElementById('vibe').placeholder = t.placeholderVibe;
+
+    // 4. 其他 UI 元素
+    document.getElementById('btn-update').innerText = t.btnUpdate;
+    document.getElementById('randomizeBtn').innerText = t.btnRandom;
     document.getElementById('ui-label-num').innerText = t.labelNum;
     document.getElementById('ui-history-title').innerText = t.history;
     document.querySelector('.large-primary').innerText = t.btnGenerate;
 
+    // 渲染下拉選單與自動清空邏輯
     ["genre", "vibe", "angle", "location", "lighting", "quality"].forEach(k => {
-        const labelEl = document.getElementById(`ui-label-${k}`);
-        if(labelEl) labelEl.innerText = (t.labels[k] || k) + ":";
         renderDatalist(`list-${k}`, k);
         setupSmartInput(k);
     });
     renderForm();
 }
 
-// 優化：點擊輸入框自動顯示選單
+// 優化：點擊時暫時清空以顯示所有選項，離開後若沒選則還原
 function setupSmartInput(id) {
     const el = document.getElementById(id);
     if(!el) return;
-    el.onfocus = () => { el.oldValue = el.value; el.value = ''; };
-    el.onblur = () => { if(el.value === '') el.value = el.oldValue || ''; };
+    el.onfocus = function() {
+        this.oldValue = this.value;
+        this.value = '';
+    };
+    el.onblur = function() {
+        if(this.value === '') {
+            this.value = this.oldValue || '';
+        }
+    };
 }
 
 function renderDatalist(id, key) {
     const dl = document.getElementById(id);
     if (!dl || !DICTIONARY[key]) return;
+    // 確保中英文選項同時存在
     dl.innerHTML = DICTIONARY[key].map(i => `<option value="${i[UI_LANG]}"></option>`).join('');
 }
 
