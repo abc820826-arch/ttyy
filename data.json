@@ -3,122 +3,54 @@
     {"en": "General anime style", "zh": "一般動漫風格"}, {"en": "Manga illustration", "zh": "漫畫插畫風"},
     {"en": "Hyper-realistic photography", "zh": "超寫實攝影"}, {"en": "Vintage photo style", "zh": "復古照片風"},
     {"en": "3D Animation style", "zh": "3D 動畫風"}, {"en": "Cyberpunk 2077", "zh": "賽博龐克 2077"},
-    {"en": "Studio Ghibli", "zh": "吉卜力動漫風"}, {"en": "Makoto Shinkai", "zh": "新海誠光影風"},
-    {"en": "Oil painting", "zh": "油畫風"}, {"en": "Watercolor painting", "zh": "水彩畫風"},
-    {"en": "Ukiyo-e", "zh": "浮世繪"}, {"en": "Pixel art", "zh": "像素藝術"},
-    {"en": "Vaporwave", "zh": "蒸汽波風"}, {"en": "Gothic art", "zh": "哥德藝術風"},
-    {"en": "Renaissance", "zh": "文藝復興風格"}, {"en": "Concept art", "zh": "遊戲概念圖風"},
-    {"en": "Ink wash painting", "zh": "水墨畫風"}, {"en": "Synthwave", "zh": "合成器波風"}
+    {"en": "Studio Ghibli", "zh": "吉卜力動漫風"}, {"en": "Makoto Shinkai", "zh": "新海誠光影風"}
   ],
   "vibe": [
     {"en": "Joyful and Bright", "zh": "歡樂明亮"}, {"en": "Romantic and Dreamy", "zh": "浪漫夢幻"},
     {"en": "Mysterious and Eerie", "zh": "神秘詭譎"}, {"en": "Cinematic", "zh": "電影感"},
-    {"en": "Dark and Ominous", "zh": "黑暗不祥/末世感"}, {"en": "Ethereal and Otherworldly", "zh": "飄渺空靈"},
-    {"en": "Gritty and Urban", "zh": "冷硬都市感"}, {"en": "Nostalgic and Retro", "zh": "懷舊復古"},
-    {"en": "Minimalist", "zh": "極簡主義"}, {"en": "Vibrant and Colorful", "zh": "鮮艷活力"},
-    {"en": "Melancholic", "zh": "憂鬱感傷"}, {"en": "Serene and Peaceful", "zh": "寧靜祥和"},
-    {"en": "Epic and Grand", "zh": "史詩壯闊"}, {"en": "Glitchy", "zh": "故障藝術感"}
+    {"en": "Dark and Ominous", "zh": "黑暗不祥/末世感"}
   ],
   "gender": [
     {"en": "Female", "zh": "女性"}, {"en": "Male", "zh": "男性"}, {"en": "Non-binary", "zh": "非二元性別"}
   ],
   "age": [
-    {"en": "Infant", "zh": "嬰兒"}, {"en": "Child", "zh": "兒童"}, 
-    {"en": "Teenager", "zh": "少年/青年"}, {"en": "Young adult", "zh": "成年人"},
+    {"en": "Child", "zh": "兒童"}, {"en": "Teenager", "zh": "少年/青年"},
     {"en": "Middle-aged", "zh": "中年"}, {"en": "Elderly", "zh": "老年"}
   ],
   "species": [
-    {"en": "Human", "zh": "人類"}, {"en": "Elf", "zh": "精靈"}, 
-    {"en": "Cyborg", "zh": "半機器人"}, {"en": "Demon", "zh": "惡魔"},
-    {"en": "Angel", "zh": "天使"}, {"en": "Vampire", "zh": "吸血鬼"},
-    {"en": "Cat-eared humanoid", "zh": "貓耳人"}, {"en": "Dragon humanoid", "zh": "龍人"},
-    {"en": "Android", "zh": "仿生人"}, {"en": "Fairy", "zh": "小仙子"}
+    {"en": "Human", "zh": "人類"}, {"en": "Elf", "zh": "精靈"}, {"en": "Cyborg", "zh": "半機器人"}, {"en": "Demon", "zh": "惡魔"}
   ],
   "ethnicity": [
-    {"en": "East Asian", "zh": "東亞人"}, {"en": "European", "zh": "歐洲人"}, 
-    {"en": "African", "zh": "非洲人"}, {"en": "Middle Eastern", "zh": "中東人"},
-    {"en": "Latin", "zh": "拉丁人"}, {"en": "South Asian", "zh": "南亞人"},
-    {"en": "Nordic", "zh": "北歐人"}, {"en": "North american", "zh": "北美人"},
-    {"en": "South American", "zh": "南美人"}
+    {"en": "East Asian", "zh": "東亞裔"}, {"en": "Caucasian", "zh": "白人"}, {"en": "African", "zh": "非洲裔"}
   ],
   "hairStyle": [
-    {"en": "Long straight hair", "zh": "長直髮"}, {"en": "Ponytail", "zh": "馬尾"}, 
-    {"en": "Short bob", "zh": "波波頭"}, {"en": "Twin tails", "zh": "雙馬尾"},
-    {"en": "Pixie cut", "zh": "極短髮"}, {"en": "Curly hair", "zh": "捲髮"},
-    {"en": "Braided pigtails", "zh": "麻花辮"}, {"en": "Bun", "zh": "丸子頭"},
-    {"en": "Undercut", "zh": "側邊削短"}, {"en": "Shoulder-length hair", "zh": "齊肩髮"},
-    {"en": "Messy bedhead", "zh": "凌亂碎髮"}, {"en": "Afro", "zh": "爆炸頭"}
+    {"en": "Long straight hair", "zh": "長直髮"}, {"en": "Ponytail", "zh": "馬尾"}, {"en": "Short bob", "zh": "波波頭"}
   ],
   "hairColor": [
-    {"en": "Jet black", "zh": "烏黑"}, {"en": "Golden blonde", "zh": "金髮"}, 
-    {"en": "Silver white", "zh": "銀白色"}, {"en": "Chestnut brown", "zh": "栗褐"},
-    {"en": "Pastel pink", "zh": "櫻花粉"}, {"en": "Neon green", "zh": "霓虹綠"},
-    {"en": "Deep blue", "zh": "深藍"}, {"en": "Fiery red", "zh": "火紅"},
-    {"en": "Ombre color", "zh": "漸層色"}, {"en": "Rainbow hair", "zh": "彩虹色"}
+    {"en": "Jet black", "zh": "烏黑"}, {"en": "Golden blonde", "zh": "金髮"}, {"en": "Silver white", "zh": "銀白色"}
   ],
   "body": [
-    {"en": "Average build", "zh": "中等身材"}, {"en": "Slim", "zh": "苗條"}, 
-    {"en": "Muscular", "zh": "肌肉型"}, {"en": "Athletic", "zh": "運動健美型"},
-    {"en": "Hourglass figure", "zh": "沙漏型身材"}, {"en": "Petite", "zh": "嬌小"},
-    {"en": "Tall and lanky", "zh": "高挑纖瘦"}, {"en": "Plus size", "zh": "豐滿身材"},
-    {"en": "Broad shoulders", "zh": "寬肩體格"}, {"en": "Curvy", "zh": "玲瓏有致"}
+    {"en": "Average build", "zh": "中等身材"}, {"en": "Slim", "zh": "苗條"}, {"en": "Muscular", "zh": "肌肉型"}
   ],
   "outfit": [
-    {"en": "Casual wear", "zh": "休閒服"}, {"en": "Techwear", "zh": "機能服"}, 
-    {"en": "Knight armor", "zh": "騎士鎧甲"}, {"en": "White shirt and jeans", "zh": "白襯衫與牛仔褲"},
-    {"en": "School uniform", "zh": "學校制服"}, {"en": "Business suit", "zh": "商務西裝"},
-    {"en": "Summer sundress", "zh": "夏季連身裙"}, {"en": "Bikini", "zh": "比基尼"},
-    {"en": "One-piece swimsuit", "zh": "連身泳裝"}, {"en": "Gothic Lolita", "zh": "哥德蘿莉塔"},
-    {"en": "Japanese Kimono", "zh": "日式和服"}, {"en": "Traditional Hanfu", "zh": "傳統漢服"},
-    {"en": "Cyberpunk jacket", "zh": "賽博龐克外套"}, {"en": "Hoodie and joggers", "zh": "帽T與運動褲"},
-    {"en": "Evening gown", "zh": "晚禮服"}, {"en": "Maid outfit", "zh": "女僕裝"},
-    {"en": "Space suit", "zh": "太空衣"}, {"en": "Lab coat", "zh": "實驗袍"},
-    {"en": "Leather jacket", "zh": "皮夾克"}, {"en": "Tactical vest", "zh": "戰術背心"}
+    {"en": "Casual wear", "zh": "休閒服"}, {"en": "Techwear", "zh": "機能服"}, {"en": "Knight armor", "zh": "騎士鎧甲"}
   ],
   "pose": [
-    {"en": "Standing naturally", "zh": "自然站立"}, {"en": "Sitting", "zh": "坐姿"}, 
-    {"en": "Running", "zh": "跑步"}, {"en": "Leaning against wall", "zh": "靠在牆邊"},
-    {"en": "Looking over shoulder", "zh": "回眸"}, {"en": "Crouching low", "zh": "蹲姿"},
-    {"en": "Lying on back", "zh": "仰躺"}, {"en": "Stretching arms", "zh": "伸懶腰"},
-    {"en": "Crossing arms", "zh": "雙手交叉胸前"}, {"en": "Adjusting glasses", "zh": "推眼鏡"},
-    {"en": "Waving hand", "zh": "揮手"}, {"en": "Floating in mid-air", "zh": "空中漂浮"},
-    {"en": "Holding a sword", "zh": "持劍姿態"}, {"en": "Peace sign", "zh": "比耶手勢"}
+    {"en": "Standing naturally", "zh": "自然站立"}, {"en": "Sitting", "zh": "坐姿"}, {"en": "Running", "zh": "跑步"}
   ],
   "expression": [
-    {"en": "Warm smile", "zh": "暖心微笑"}, {"en": "Cool and aloof", "zh": "高冷冷酷"}, 
-    {"en": "Sad", "zh": "悲傷"}, {"en": "Angry and frowning", "zh": "憤怒皺眉"},
-    {"en": "Surprised and eyes wide", "zh": "驚訝瞪大眼"}, {"en": "Blushing and shy", "zh": "臉紅害羞"},
-    {"en": "Mischievous smirk", "zh": "壞笑/惡作劇"}, {"en": "Expressionless", "zh": "面無表情"},
-    {"en": "Wink", "zh": "眨眼"}, {"en": "Determined and serious", "zh": "眼神堅毅"},
-    {"en": "Sleepy and yawning", "zh": "睏倦打哈欠"}, {"en": "Pouting", "zh": "噘嘴"}
+    {"en": "Warm smile", "zh": "暖心微笑"}, {"en": "Cool and aloof", "zh": "高冷冷酷"}, {"en": "Sad", "zh": "悲傷"}
   ],
   "location": [
-    {"en": "City street", "zh": "城市街道"}, {"en": "Forest", "zh": "森林"}, 
-    {"en": "Cyberpunk city", "zh": "賽博龐克城"}, {"en": "Cozy bedroom", "zh": "溫馨臥室"},
-    {"en": "Modern office", "zh": "現代辦公室"}, {"en": "Tropical beach", "zh": "熱帶海邊"},
-    {"en": "Snowy mountain top", "zh": "雪山頂"}, {"en": "Library with bookshelves", "zh": "圖書館"},
-    {"en": "Traditional classroom", "zh": "傳統教室"}, {"en": "Coffee shop", "zh": "咖啡廳"},
-    {"en": "Ancient ruins", "zh": "古代遺跡"}, {"en": "Undersea kingdom", "zh": "海底王國"},
-    {"en": "Rooftop garden", "zh": "屋頂花園"}, {"en": "Space station interior", "zh": "太空站內部"}
+    {"en": "City street", "zh": "城市街道"}, {"en": "Forest", "zh": "森林"}, {"en": "Cyberpunk city", "zh": "賽博龐克城"}
   ],
   "lighting": [
-    {"en": "Cinematic lighting", "zh": "電影打光"}, {"en": "Golden hour", "zh": "黃昏金光"}, 
-    {"en": "Neon", "zh": "霓虹光"}, {"en": "Soft natural light", "zh": "柔和自然光"},
-    {"en": "Rembrandt lighting", "zh": "林布蘭光/側光"}, {"en": "Backlighting", "zh": "逆光"},
-    {"en": "Dramatic shadows", "zh": "戲劇性陰影"}, {"en": "Volumetric lighting", "zh": "體積光/丁達爾效應"},
-    {"en": "Moonlight", "zh": "月光"}, {"en": "Harsh sunlight", "zh": "強烈陽光"},
-    {"en": "Rim lighting", "zh": "輪廓光"}, {"en": "Candlelight", "zh": "燭光"}
+    {"en": "Cinematic lighting", "zh": "電影打光"}, {"en": "Golden hour", "zh": "黃昏金光"}, {"en": "Neon", "zh": "霓虹光"}
   ],
   "quality": [
-    {"en": "8k resolution", "zh": "8K 解析度"}, {"en": "Masterpiece", "zh": "傑作"}, 
-    {"en": "Highly detailed", "zh": "極致細節"}, {"en": "Best quality", "zh": "最高品質"},
-    {"en": "UHD", "zh": "超高清"}, {"en": "Photorealistic", "zh": "寫實化細節"},
-    {"en": "Ray tracing", "zh": "光線追蹤"}
+    {"en": "8k resolution", "zh": "8K 解析度"}, {"en": "Masterpiece", "zh": "傑作"}, {"en": "Highly detailed", "zh": "極致細節"}
   ],
   "angle": [
-    {"en": "Eye-level", "zh": "平視"}, {"en": "Close-up", "zh": "特寫"}, 
-    {"en": "Full body shot", "zh": "全身"}, {"en": "Low angle / Bird's eye view", "zh": "俯視/鳥瞰"},
-    {"en": "High angle / Worm's eye view", "zh": "仰視/虫瞻"}, {"en": "Medium shot", "zh": "中景"},
-    {"en": "Side view", "zh": "側面"}, {"en": "Extreme close-up", "zh": "局部極致特寫"}
+    {"en": "Eye-level", "zh": "平視"}, {"en": "Close-up", "zh": "特寫"}, {"en": "Full body shot", "zh": "全身"}
   ]
 }
