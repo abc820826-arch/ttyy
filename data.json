@@ -20,7 +20,7 @@
     {"en": "Epic and Grand", "zh": "史詩壯闊"}, {"en": "Glitchy", "zh": "故障藝術感"}
   ],
   "gender": [
-    {"en": "1Female", "zh": "1女性"}, {"en": "1Male", "zh": "1男性"}, {"en": "1Non-binary", "zh": "1非二元性別"}
+    {"en": "Female", "zh": "女性"}, {"en": "Male", "zh": "男性"}, {"en": "Non-binary", "zh": "非二元性別"}
   ],
   "age": [
     {"en": "Infant", "zh": "嬰兒"}, {"en": "Child", "zh": "兒童"}, 
