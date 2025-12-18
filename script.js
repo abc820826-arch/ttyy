@@ -13,7 +13,7 @@ const UI_TEXT = {
         legSub: "👤 角色設定 Subject",
         labelTitle: "1. 描述你的圖像主題 (Title):",
         labelNum: "👥 角色數量:",
-        history: "📜 歷史紀錄 (點擊可重新載入內容)",
+        history: "📜 歷史紀錄 (點擊可載入結果)",
         labels: {
             genre: "2. 藝術風格", vibe: "3. 視覺氛圍", gender: "性別", age: "年齡層", 
             species: "物種", ethnicity: "族裔", hairStyle: "髮型", hairColor: "髮色", 
@@ -62,16 +62,20 @@ function setLanguage(lang) {
 
 function updateUI() {
     const t = UI_TEXT[UI_LANG];
-    document.getElementById('ui-subtitle').innerText = t.subtitle;
-    document.getElementById('ui-usage-tip').innerText = t.usage;
-    document.getElementById('btn-update').innerText = t.btnUpdate;
-    document.getElementById('randomizeBtn').innerText = t.btnRandom;
-    document.getElementById('ui-leg-core').innerText = t.legCore;
-    document.getElementById('ui-leg-env').innerText = t.legEnv;
-    document.getElementById('ui-label-title').innerText = t.labelTitle;
-    document.getElementById('ui-label-num').innerText = t.labelNum;
-    document.getElementById('ui-history-title').innerText = t.history;
-    document.querySelector('.large-primary').innerText = t.btnGenerate;
+    const safeSetText = (id, text) => { const el = document.getElementById(id); if(el) el.innerText = text; };
+    
+    safeSetText('ui-subtitle', t.subtitle);
+    safeSetText('ui-usage-tip', t.usage);
+    safeSetText('btn-update', t.btnUpdate);
+    safeSetText('randomizeBtn', t.btnRandom);
+    safeSetText('ui-leg-core', t.legCore);
+    safeSetText('ui-leg-env', t.legEnv);
+    safeSetText('ui-label-title', t.labelTitle);
+    safeSetText('ui-label-num', t.labelNum);
+    safeSetText('ui-history-title', t.history);
+    
+    const genBtn = document.querySelector('.large-primary');
+    if(genBtn) genBtn.innerText = t.btnGenerate;
 
     ["genre", "vibe", "angle", "location", "lighting", "quality"].forEach(k => {
         const labelEl = document.getElementById(`ui-label-${k}`);
@@ -97,6 +101,7 @@ function renderDatalist(id, key) {
 
 function renderForm() {
     const container = document.getElementById('subjectsContainer');
+    if(!container) return;
     const num = document.getElementById('numSubjects').value;
     const t = UI_TEXT[UI_LANG];
     container.innerHTML = '';
@@ -111,7 +116,7 @@ function renderForm() {
             const inputId = `subject-${i}-${attr}`;
             grid.innerHTML += `
                 <div class="input-unit">
-                    <label>${t.labels[attr]}:</label>
+                    <label>${t.labels[attr] || attr}:</label>
                     <input type="text" id="${inputId}" list="${listId}" placeholder="...">
                     <datalist id="${listId}"></datalist>
                 </div>
@@ -123,7 +128,7 @@ function renderForm() {
 }
 
 function generatePrompt() {
-    const getVal = (id) => document.getElementById(id).value;
+    const getVal = (id) => document.getElementById(id)?.value || "";
     const title = getVal('title');
     const genre = getVal('genre');
     const vibe = getVal('vibe');
@@ -141,25 +146,26 @@ function generatePrompt() {
         let subEn = [];
         let subZh = [];
         attrs.forEach(a => {
-            let val = document.getElementById(`subject-${i}-${a}`).value;
+            const inputEl = document.getElementById(`subject-${i}-${a}`);
+            let val = inputEl ? inputEl.value : "";
             if(val) {
                 const entry = DICTIONARY[a]?.find(item => item.en === val || item.zh === val);
                 subEn.push(entry ? entry.en : val);
                 subZh.push(entry ? entry.zh : val);
             }
         });
-        // 功能 2：角色前面預設加上 "1 "
+        // 核心邏輯：預設加上 "1 "
         if(subEn.length) {
             subjectsEn.push("1 " + subEn.join(', '));
             subjectsZh.push("1名 " + subZh.join(', '));
         }
     }
     
-    const genreEntry = DICTIONARY.genre.find(i => i.en === genre || i.zh === genre);
-    const vibeEntry = DICTIONARY.vibe.find(i => i.en === vibe || i.zh === vibe);
+    const genreEntry = DICTIONARY.genre?.find(i => i.en === genre || i.zh === genre);
+    const vibeEntry = DICTIONARY.vibe?.find(i => i.en === vibe || i.zh === vibe);
     
     let en = `${genreEntry?.en || genre}, ${title}, ${vibeEntry?.en || vibe}`;
-    en += subjectsEn.length ? `, ${subjectsEn.join(' and ')}` : "";
+    if(subjectsEn.length) en += `, ${subjectsEn.join(' and ')}`;
     en += `, ${location}, ${angle}, ${lighting}, ${quality}`;
 
     let zh = `【風格】${genreEntry?.zh || genre}\n【主題】${title}\n【氛圍】${vibeEntry?.zh || vibe}`;
@@ -177,19 +183,18 @@ function displayOutput(en, zh) {
     document.getElementById('out-json').innerText = JSON.stringify(jsonData, null, 2);
 }
 
-// 功能 3：歷史紀錄載入功能
 function saveHistory(en, zh) {
-    let history = JSON.parse(localStorage.getItem('v8_history') || '[]');
-    // 檢查是否重複，避免洗版
+    let history = JSON.parse(localStorage.getItem('app_history') || '[]');
     if (history.length > 0 && history[0].en === en) return;
     history.unshift({ time: new Date().toLocaleTimeString(), en, zh });
-    localStorage.setItem('v8_history', JSON.stringify(history.slice(0, 10)));
+    localStorage.setItem('app_history', JSON.stringify(history.slice(0, 10)));
     renderHistory();
 }
 
 function renderHistory() {
     const list = document.getElementById('historyList');
-    const history = JSON.parse(localStorage.getItem('v8_history') || '[]');
+    if(!list) return;
+    const history = JSON.parse(localStorage.getItem('app_history') || '[]');
     list.innerHTML = history.map((item, index) => `
         <div class="history-item" onclick="loadFromHistory(${index})">
             <small class="history-time">${item.time}</small>
@@ -199,19 +204,18 @@ function renderHistory() {
 }
 
 function loadFromHistory(index) {
-    const history = JSON.parse(localStorage.getItem('v8_history') || '[]');
+    const history = JSON.parse(localStorage.getItem('app_history') || '[]');
     const item = history[index];
     if(item) {
         displayOutput(item.en, item.zh);
-        // 視覺回饋
         const outBox = document.getElementById('out-en');
-        outBox.style.backgroundColor = '#fff9c4';
+        outBox.style.backgroundColor = '#fff9c4'; 
         setTimeout(() => outBox.style.backgroundColor = '', 500);
     }
 }
 
 function clearHistory() {
-    localStorage.removeItem('v8_history');
+    localStorage.removeItem('app_history');
     renderHistory();
 }
 
