@@ -35,10 +35,11 @@
     {"en": "Android", "zh": "仿生人"}, {"en": "Fairy", "zh": "小仙子"}
   ],
   "ethnicity": [
-    {"en": "East Asian", "zh": "東亞"}, {"en": "Caucasian", "zh": "白人"}, 
-    {"en": "African", "zh": "非洲"}, {"en": "Middle Eastern", "zh": "中東"},
-    {"en": "Latin American", "zh": "拉丁美洲"}, {"en": "South Asian", "zh": "南亞"},
-    {"en": "Nordic", "zh": "北歐"}, {"en": "Mediterranean", "zh": "地中海"}
+    {"en": "East Asian", "zh": "東亞人"}, {"en": "European", "zh": "歐洲人"}, 
+    {"en": "African", "zh": "非洲人"}, {"en": "Middle Eastern", "zh": "中東人"},
+    {"en": "Latin", "zh": "拉丁人"}, {"en": "South Asian", "zh": "南亞人"},
+    {"en": "Nordic", "zh": "北歐人"}, {"en": "North american", "zh": "北美人"},
+    {"en": "South American", "zh": "南美人"}
   ],
   "hairStyle": [
     {"en": "Long straight hair", "zh": "長直髮"}, {"en": "Ponytail", "zh": "馬尾"}, 
