@@ -13,19 +13,17 @@ const UI_TEXT = {
         legSub: "👤 角色設定 Subject",
         labelTitle: "1. 描述你的圖像主題 (Title):",
         labelNum: "👥 角色數量:",
-        history: "📜 歷史紀錄",
+        history: "📜 歷史紀錄 (點擊可重新載入內容)",
         labels: {
-            genre: "2. 藝術風格",
-            vibe: "3. 視覺氛圍",
-            gender: "性別", age: "年齡層", species: "物種", ethnicity: "族裔",
-            hairStyle: "髮型", hairColor: "髮色", body: "身材", outfit: "服裝",
-            pose: "姿勢", expression: "表情", angle: "視角", location: "地點",
-            lighting: "光影", quality: "畫質"
+            genre: "2. 藝術風格", vibe: "3. 視覺氛圍", gender: "性別", age: "年齡層", 
+            species: "物種", ethnicity: "族裔", hairStyle: "髮型", hairColor: "髮色", 
+            body: "身材", outfit: "服裝", pose: "姿勢", expression: "表情", 
+            angle: "視角", location: "地點", lighting: "光影", quality: "畫質"
         }
     },
     en: {
         subtitle: "Core Weight Optimized | Dual-Language UI",
-        usage: "💡 This site provides combination ideas; feel free to add your own thoughts and adjectives.",
+        usage: "💡 This site provides combination ideas; add your own words freely.",
         btnUpdate: "Update UI",
         btnRandom: "✨ Randomize All",
         btnGenerate: "🚀 Generate Prompt Now",
@@ -34,14 +32,12 @@ const UI_TEXT = {
         legSub: "👤 Subject Settings",
         labelTitle: "1. Image Topic (Title):",
         labelNum: "Subject Count:",
-        history: "📜 History",
+        history: "📜 History (Click to reload)",
         labels: {
-            genre: "2. Art Genre",
-            vibe: "3. Visual Vibe",
-            gender: "Gender", age: "Age Group", species: "Species", ethnicity: "Ethnicity",
-            hairStyle: "Hair Style", hairColor: "Hair Color", body: "Body Type", outfit: "Outfit",
-            pose: "Pose", expression: "Expression", angle: "Angle", location: "Location",
-            lighting: "Lighting", quality: "Quality"
+            genre: "2. Art Genre", vibe: "3. Visual Vibe", gender: "Gender", age: "Age Group",
+            species: "Species", ethnicity: "Ethnicity", hairStyle: "Hair Style", hairColor: "Hair Color",
+            body: "Body Type", outfit: "Outfit", pose: "Pose", expression: "Expression",
+            angle: "Angle", location: "Location", lighting: "Lighting", quality: "Quality"
         }
     }
 };
@@ -51,6 +47,7 @@ async function loadLibrary() {
         const res = await fetch('data.json');
         DICTIONARY = await res.json();
         setLanguage('zh'); 
+        renderHistory();
     } catch (e) { console.error("Data load failed", e); }
 }
 
@@ -66,8 +63,7 @@ function setLanguage(lang) {
 function updateUI() {
     const t = UI_TEXT[UI_LANG];
     document.getElementById('ui-subtitle').innerText = t.subtitle;
-    const usageTip = document.getElementById('ui-usage-tip');
-    if (usageTip) usageTip.innerText = t.usage;
+    document.getElementById('ui-usage-tip').innerText = t.usage;
     document.getElementById('btn-update').innerText = t.btnUpdate;
     document.getElementById('randomizeBtn').innerText = t.btnRandom;
     document.getElementById('ui-leg-core').innerText = t.legCore;
@@ -120,10 +116,7 @@ function renderForm() {
                     <datalist id="${listId}"></datalist>
                 </div>
             `;
-            setTimeout(() => {
-                renderDatalist(listId, attr);
-                setupSmartInput(inputId);
-            }, 0);
+            setTimeout(() => { renderDatalist(listId, attr); setupSmartInput(inputId); }, 0);
         });
         container.appendChild(fieldset);
     }
@@ -155,7 +148,7 @@ function generatePrompt() {
                 subZh.push(entry ? entry.zh : val);
             }
         });
-        // 核心修正：若有填寫角色內容，前面加上 "1 "
+        // 功能 2：角色前面預設加上 "1 "
         if(subEn.length) {
             subjectsEn.push("1 " + subEn.join(', '));
             subjectsZh.push("1名 " + subZh.join(', '));
@@ -173,12 +166,53 @@ function generatePrompt() {
     if(subjectsZh.length) zh += `\n【角色】${subjectsZh.join(' 與 ')}`;
     zh += `\n【環境】${location} / ${angle} / ${lighting} / ${quality}`;
 
+    displayOutput(en, zh);
+    saveHistory(en, zh);
+}
+
+function displayOutput(en, zh) {
     document.getElementById('out-en').innerText = en;
     document.getElementById('out-zh').innerText = zh;
-    
-    const jsonData = { title, genre: genreEntry?.en || genre, vibe: vibeEntry?.en || vibe, subjects: subjectsEn, settings: { location, camera: angle } };
+    const jsonData = { en, zh };
     document.getElementById('out-json').innerText = JSON.stringify(jsonData, null, 2);
-    saveHistory(en);
+}
+
+// 功能 3：歷史紀錄載入功能
+function saveHistory(en, zh) {
+    let history = JSON.parse(localStorage.getItem('v8_history') || '[]');
+    // 檢查是否重複，避免洗版
+    if (history.length > 0 && history[0].en === en) return;
+    history.unshift({ time: new Date().toLocaleTimeString(), en, zh });
+    localStorage.setItem('v8_history', JSON.stringify(history.slice(0, 10)));
+    renderHistory();
+}
+
+function renderHistory() {
+    const list = document.getElementById('historyList');
+    const history = JSON.parse(localStorage.getItem('v8_history') || '[]');
+    list.innerHTML = history.map((item, index) => `
+        <div class="history-item" onclick="loadFromHistory(${index})">
+            <small class="history-time">${item.time}</small>
+            <div class="history-prompt">${item.en}</div>
+        </div>
+    `).join('');
+}
+
+function loadFromHistory(index) {
+    const history = JSON.parse(localStorage.getItem('v8_history') || '[]');
+    const item = history[index];
+    if(item) {
+        displayOutput(item.en, item.zh);
+        // 視覺回饋
+        const outBox = document.getElementById('out-en');
+        outBox.style.backgroundColor = '#fff9c4';
+        setTimeout(() => outBox.style.backgroundColor = '', 500);
+    }
+}
+
+function clearHistory() {
+    localStorage.removeItem('v8_history');
+    renderHistory();
 }
 
 document.getElementById('randomizeBtn').onclick = () => {
@@ -198,29 +232,6 @@ document.getElementById('randomizeBtn').onclick = () => {
     }
     generatePrompt();
 };
-
-function saveHistory(en) {
-    let history = JSON.parse(localStorage.getItem('v7_history') || '[]');
-    history.unshift({ time: new Date().toLocaleTimeString(), en });
-    localStorage.setItem('v7_history', JSON.stringify(history.slice(0, 10)));
-    renderHistory();
-}
-
-function renderHistory() {
-    const list = document.getElementById('historyList');
-    const history = JSON.parse(localStorage.getItem('v7_history') || '[]');
-    list.innerHTML = history.map(item => `
-        <div class="history-item">
-            <small class="history-time">${item.time}</small>
-            <div class="history-prompt">${item.en}</div>
-        </div>
-    `).join('');
-}
-
-function clearHistory() {
-    localStorage.removeItem('v7_history');
-    renderHistory();
-}
 
 function copyText(id) {
     const text = document.getElementById(id).innerText;
